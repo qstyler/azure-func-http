@@ -165,40 +165,42 @@ describe('Schematic Tests Nest Add', () => {
         .toPromise();
 
       const files: string[] = tree.files;
-      expect(files).toEqual([
-        '/.eslintrc.js',
-        '/.prettierrc',
-        '/README.md',
-        '/nest-cli.json',
-        '/package.json',
-        '/tsconfig.build.json',
-        '/tsconfig.json',
-        '/.funcignore',
-        '/host.json',
-        '/local.settings.json',
-        '/proxies.json',
-        '/src/app.controller.spec.ts',
-        '/src/app.controller.ts',
-        '/src/app.module.ts',
-        '/src/app.service.ts',
-        '/src/main.ts',
-        '/test/app.e2e-spec.ts',
-        '/test/jest-e2e.json',
-        '/apps/nestjs-azure-func-http/tsconfig.app.json',
-        `/apps/${projectName}/tsconfig.app.json`,
-        `/apps/${projectName}/src/main.ts`,
-        `/apps/${projectName}/src/${projectName}.controller.spec.ts`,
-        `/apps/${projectName}/src/${projectName}.controller.ts`,
-        `/apps/${projectName}/src/${projectName}.module.ts`,
-        `/apps/${projectName}/src/${projectName}.service.ts`,
-        `/apps/${projectName}/src/main.azure.ts`,
-        `/apps/${projectName}/test/app.e2e-spec.ts`,
-        `/apps/${projectName}/test/jest-e2e.json`,
-        `/${projectName}/function.json`,
-        `/${projectName}/index.ts`,
-        `/${projectName}/sample.dat`,
-        `/${projectName}/webpack.config.js`
-      ]);
+      expect(files.sort()).toEqual(
+        [
+          '/.eslintrc.js',
+          '/.prettierrc',
+          '/README.md',
+          '/nest-cli.json',
+          '/package.json',
+          '/tsconfig.build.json',
+          '/tsconfig.json',
+          '/.funcignore',
+          '/host.json',
+          '/local.settings.json',
+          '/proxies.json',
+          '/src/app.controller.spec.ts',
+          '/src/app.controller.ts',
+          '/src/app.module.ts',
+          '/src/app.service.ts',
+          '/src/main.ts',
+          '/test/app.e2e-spec.ts',
+          '/test/jest-e2e.json',
+          '/apps/nestjs-azure-func-http/tsconfig.app.json',
+          `/apps/${projectName}/tsconfig.app.json`,
+          `/apps/${projectName}/src/main.ts`,
+          `/apps/${projectName}/src/${projectName}.controller.spec.ts`,
+          `/apps/${projectName}/src/${projectName}.controller.ts`,
+          `/apps/${projectName}/src/${projectName}.module.ts`,
+          `/apps/${projectName}/src/${projectName}.service.ts`,
+          `/apps/${projectName}/src/main.azure.ts`,
+          `/apps/${projectName}/test/app.e2e-spec.ts`,
+          `/apps/${projectName}/test/jest-e2e.json`,
+          `/${projectName}/function.json`,
+          `/${projectName}/index.ts`,
+          `/${projectName}/sample.dat`,
+          `/${projectName}/webpack.config.js`
+        ].sort()
+      );
     });
 
     it('should have a nest-cli.json for monorepo app', async () => {
