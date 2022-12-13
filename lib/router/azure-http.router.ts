@@ -1,9 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { HttpStatus, RequestMethod } from '@nestjs/common';
+import {
+  HttpStatus,
+  NotImplementedException,
+  RequestMethod,
+  VersioningOptions
+} from '@nestjs/common';
 import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
 import { AbstractHttpAdapter } from '@nestjs/core';
 import { RouterMethodFactory } from '@nestjs/core/helpers/router-method-factory';
+import { VersionValue } from '@nestjs/common/interfaces';
 import * as cors from 'cors';
 import TRouter from 'trouter';
 import { AzureReply, AzureRequest } from '../adapter';
@@ -95,6 +101,22 @@ export class AzureHttpRouter extends AbstractHttpAdapter {
 
   public getType(): string {
     return 'azure-http';
+  }
+
+  end(response: any, message: string | undefined): any {
+    throw new NotImplementedException();
+  }
+
+  applyVersionFilter(
+    handler: Function,
+    version: VersionValue,
+    versioningOptions: VersioningOptions
+  ): (req: any, res: any, next: () => void) => Function {
+    throw new NotImplementedException();
+  }
+
+  isHeadersSent(response: any): any {
+    throw new NotImplementedException();
   }
 
   public listen(port: any, ...args: any[]) {}
