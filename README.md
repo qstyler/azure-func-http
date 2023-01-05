@@ -33,7 +33,7 @@
 Using the Nest CLI:
 
 ```bash
-$ nest add @nestjs/azure-func-http
+$ nest add @qstyler/nestjs-azure-func-http
 ```
 
 Example output:
@@ -63,14 +63,14 @@ If you don't need the compatibility with `express` library, you can use a native
 const app = await NestFactory.create(AppModule, new AzureHttpRouter());
 ```
 
-`AzureHttpRouter` is exported from `@nestjs/azure-func-http`. Since `AzureHttpRouter` doesn't use `express` underneath, the routing itself is much faster.
+`AzureHttpRouter` is exported from `@qstyler/nestjs-azure-func-http`. Since `AzureHttpRouter` doesn't use `express` underneath, the routing itself is much faster.
 
 ## Additional options
 
 You can pass additional flags to customize the post-install schematic. For example, if your base application directory is different than `src`, use `--rootDir` flag:
 
 ```bash
-$ nest add @nestjs/azure-func-http --rootDir app
+$ nest add @qstyler/nestjs-azure-func-http --rootDir app
 ```
 
 Other available flags:
